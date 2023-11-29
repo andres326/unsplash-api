@@ -1,0 +1,17 @@
+### Create a user
+POST http://localhost:4001/users/signup
+content-type: application/json
+
+{
+  "email": "hola+1@hola.com",
+  "password": "test"
+}
+
+### Sign in an user
+POST http://localhost:4001/users/signin
+content-type: application/json
+
+{
+  "email": "hola+1@hola.com",
+  "password": "test"
+}
