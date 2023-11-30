@@ -7,6 +7,14 @@ export const router = express.Router();
 
 router.get('/', imagesController.getAllImages);
 
-router.post('/', imagesController.uploadImage);
+router.post(
+  '/',
+  [
+    body('label').notEmpty().withMessage('Label must be provided'),
+    body('filename').notEmpty().withMessage('URL must be provided'),
+  ],
+  validateRequest,
+  imagesController.uploadImage
+);
 
 router.delete('/:id', imagesController.deleteImage);
