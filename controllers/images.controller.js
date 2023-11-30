@@ -7,7 +7,7 @@ export const uploadImage = async (req, res, next) => {
   const image = new ImageModel({ label, date, filename });
   await image.save();
 
-  res.status(201).send({ error: false });
+  res.status(201).send(image);
 };
 
 export const getAllImages = async (req, res, next) => {
